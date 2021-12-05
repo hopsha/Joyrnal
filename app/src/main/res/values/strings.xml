@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Joyrnal</string>
+
+    <!-- Burns questions -->
+    <string name="burns_question_sad_or_bad_mood">Вам грустно или вы в плохом настроении?</string>
+    <string name="burns_question_sad_or_dejected">Чувствуете грусть, удручены?</string>
+    <string name="burns_question_want_cry">Чувствуете желание расплакаться, слезливость?</string>
+    <string name="burns_question_gloom">Чувствуете уныние?</string>
+    <string name="burns_question_hopelessness">Испытываете чувство безнадежности?</string>
+    <string name="burns_question_low_self_esteem">Имеете низкую самооценку?</string>
+    <string name="burns_question_nullity_and_worthlessness">Испытываете чувство собственной ничтожности и непригодности?</string>
+    <string name="burns_question_guilty_or_shame">Испытываете чувство вины или стыда?</string>
+    <string name="burns_question_critic_blame_yourself">Критикуете или обвиняете себя?</string>
+    <string name="burns_question_hard_making_decisions">Испытываете трудности с принятием себя?</string>
+    <string name="burns_question_lost_interest_for_family_friends_colleagues">Чувствуете потерю интереса к членам семьи, друзьям, коллегам?</string>
+    <string name="burns_question_lonely">Испытываете одиночество?</string>
+    <string name="burns_question_spend_less_time_with_family_friends">Проводите меньше времени с семьей или с друзьями?</string>
+    <string name="burns_question_lose_motivation">Чувствуете потерю мотивации?</string>
+    <string name="burns_question_losing_interest_for_work_business">Чувствуете потерю интереса к работе или другим занятиям?</string>
+    <string name="burns_question_avoid_work_business">Избегаете работы к другой деятельности?</string>
+    <string name="burns_question_losing_joy_missing_satisfaction_from_life">Ощущаете потерю удовольствия и нехватку удовлетворения в жизни?</string>
+    <string name="burns_question_tired">Испытываете усталость?</string>
+    <string name="burns_question_difficulties_with_sleep">Испытываете затруднения со сном или, наоборот, слишком много спите?</string>
+    <string name="burns_question_low_or_high_appetite">Имеете сниженный или, наоборот, повышенный аппетит?</string>
+    <string name="burns_question_lost_interest_for_sex">Замечаете потерю интереса к сексу?</string>
+    <string name="burns_question_worried_about_health">Беспокоитесь по поводу своего здоровья?</string>
+    <string name="burns_question_suicidal_thoughts">Имеются ли у вас суицидальные мысли?</string>
+    <string name="burns_question_want_finish_life">Хотели бы вы окончить свою жизнь?</string>
+    <string name="burns_question_plan_to_hurt_yourself">Планируете ли вы навредить себе?</string>
+
+    <!-- Burns answers -->
+    <string name="burns_answer_never">Никогда</string>
+    <string name="burns_answer_sometimes">Иногда</string>
+    <string name="burns_answer_moderate">Умеренно</string>
+    <string name="burns_answer_often">Часто</string>
+    <string name="burns_answer_very_often">Очень часто</string>
+</resources>
