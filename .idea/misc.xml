@@ -5,8 +5,10 @@
       <map>
         <entry key="../../../../layout/compose-model-1636804099011.xml" value="0.125" />
         <entry key="../../../../layout/compose-model-1636851243828.xml" value="0.11739864864864864" />
+        <entry key="../../../../layout/compose-model-1639835894703.xml" value="0.21368243243243243" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.11927083333333334" />
-        <entry key="app/src/main/res/layout/activity_test.xml" value="0.21422101449275363" />
+        <entry key="app/src/main/res/layout/activity_result.xml" value="0.1403985507246377" />
+        <entry key="app/src/main/res/layout/activity_test.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_question.xml" value="0.165" />
       </map>
     </option>

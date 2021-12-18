@@ -1,4 +1,4 @@
-package com.hopsha.joyrnal.test.render.burns
+package com.hopsha.joyrnal.render.burns
 
 import android.content.Context
 import android.view.Gravity
@@ -7,7 +7,7 @@ import android.widget.TextView
 import com.hopsha.joyrnal.R
 import com.hopsha.joyrnal.questionnaries.burns.BurnsTest
 import com.hopsha.joyrnal.questionnaries.burns.BurnsTest.Question.*
-import com.hopsha.joyrnal.test.render.QuestionRender
+import com.hopsha.joyrnal.render.QuestionRender
 
 class BurnsQuestionRender: QuestionRender<BurnsTest.Question> {
 

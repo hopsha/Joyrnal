@@ -1,4 +1,4 @@
-package com.hopsha.joyrnal.test.render.burns
+package com.hopsha.joyrnal.render.burns
 
 import android.content.Context
 import android.widget.Button
@@ -8,7 +8,7 @@ import com.hopsha.joyrnal.R
 import com.hopsha.joyrnal.questionnaries.Test
 import com.hopsha.joyrnal.questionnaries.burns.BurnsTest
 import com.hopsha.joyrnal.questionnaries.burns.BurnsTest.Answer.*
-import com.hopsha.joyrnal.test.render.AnswersRender
+import com.hopsha.joyrnal.render.AnswersRender
 
 class BurnsAnswersRender: AnswersRender<BurnsTest.Answer> {
 

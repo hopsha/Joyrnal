@@ -9,7 +9,8 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.hopsha.joyrnal.R
 import com.hopsha.joyrnal.questionnaries.Test
-import com.hopsha.joyrnal.test.render.*
+import com.hopsha.joyrnal.render.*
+import com.hopsha.joyrnal.test.TestActivity
 import com.spotify.mobius.MobiusLoop
 import com.spotify.mobius.disposables.Disposable
 import com.spotify.mobius.rx3.RxMobius
@@ -27,7 +28,7 @@ class QuestionFragment : Fragment(R.layout.fragment_question) {
         logicFactory.create(question, answerSpec)
     }
 
-    private val renderRepository: RenderRepository = DefaultRenderRepository()
+    private val renderRepository: RenderRepository = DefaultRenderRepository
     private val questionRender: QuestionRender<in Test.Question> by lazy {
         renderRepository.getQuestionRender(question::class)
     }
@@ -94,6 +95,7 @@ class QuestionFragment : Fragment(R.layout.fragment_question) {
                 state.answer
             ) { answer ->
                 loop.dispatchEvent(QuestionEvent.Answer(answer as Test.Answer))
+                (activity as TestActivity).onAnswer(answer)
             }
         }
     }

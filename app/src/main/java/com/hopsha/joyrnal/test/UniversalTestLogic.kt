@@ -7,7 +7,7 @@ import com.spotify.mobius.Next
 import com.spotify.mobius.Next.next
 
 class UniversalTestLogic<Q: Test.Question, A: Test.Answer, R: Test.Result>(
-    test: Test<Q, A, R>,
+    private val test: Test<Q, A, R>,
     testExecutorFactory: TestExecutorFactory
 ) : TestLogic {
 
@@ -29,7 +29,8 @@ class UniversalTestLogic<Q: Test.Question, A: Test.Answer, R: Test.Result>(
         return if (executor.isComplete) {
             next(
                 model.copy(
-                    answers = executor.answers
+                    answers = executor.answers,
+                    result = test.evaluate(executor.answers)
                 )
             )
         } else {

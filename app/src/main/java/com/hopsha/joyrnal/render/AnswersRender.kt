@@ -1,4 +1,4 @@
-package com.hopsha.joyrnal.test.render
+package com.hopsha.joyrnal.render
 
 import android.widget.FrameLayout
 import com.hopsha.joyrnal.questionnaries.Test

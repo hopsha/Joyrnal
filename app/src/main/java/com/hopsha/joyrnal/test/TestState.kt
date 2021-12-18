@@ -7,6 +7,7 @@ data class TestState(
     val answers: Map<out Test.Question, Test.Answer>,
     val answerSpecs: Map<out Test.Question, Test.AnswerSpec<out Test.Answer>>,
     val currentQuestionIndex: Int,
+    val result: Test.Result? = null
 )
 
 val TestState.currentQuestion
@@ -17,4 +18,4 @@ fun TestState.isAnswered(question: Test.Question): Boolean {
 }
 
 val TestState.isComplete: Boolean
-    get() = questions.size == answers.size
+    get() = result != null

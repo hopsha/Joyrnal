@@ -1,14 +1,14 @@
-package com.hopsha.joyrnal.test.render
+package com.hopsha.joyrnal.render
 
 import com.hopsha.joyrnal.questionnaries.Test
 import com.hopsha.joyrnal.questionnaries.burns.BurnsTest
-import com.hopsha.joyrnal.test.render.burns.BurnsAnswersRender
-import com.hopsha.joyrnal.test.render.burns.BurnsQuestionRender
-import com.hopsha.joyrnal.test.render.burns.BurnsResultRender
+import com.hopsha.joyrnal.render.burns.BurnsAnswersRender
+import com.hopsha.joyrnal.render.burns.BurnsQuestionRender
+import com.hopsha.joyrnal.render.burns.BurnsResultRender
 import java.lang.IllegalArgumentException
 import kotlin.reflect.KClass
 
-class DefaultRenderRepository: RenderRepository {
+object DefaultRenderRepository: RenderRepository {
 
     private val renderKits: List<RenderKitEntry<*, *, *, *>> = listOf(
         RenderKitEntry(
@@ -29,7 +29,8 @@ class DefaultRenderRepository: RenderRepository {
     ): RenderKit<Q, A, R> {
         return renderKits.asSequence()
             .filter { entry -> entry.testClass == testClass }
-            .map { entry -> entry.renderKit as RenderKit<Q, A, R> }
+            .map { entry -> entry.renderKit }
+            .filterIsInstance<RenderKit<Q, A, R>>()
             .firstOrNull()
             ?: throw IllegalArgumentException("$testClass not supported")
     }
@@ -37,7 +38,8 @@ class DefaultRenderRepository: RenderRepository {
     override fun <Q : Test.Question> getQuestionRender(questionClass: KClass<out Q>): QuestionRender<in Q> {
         return renderKits.asSequence()
             .filter { entry -> entry.questionClass == questionClass }
-            .map { entry -> entry.renderKit.questionRender as QuestionRender<in Q> }
+            .map { entry -> entry.renderKit.questionRender }
+            .filterIsInstance<QuestionRender<in Q>>()
             .firstOrNull()
             ?: throw IllegalArgumentException("$questionClass not supported")
     }
@@ -45,9 +47,19 @@ class DefaultRenderRepository: RenderRepository {
     override fun <A : Test.Answer> getAnswerRender(answerClass: KClass<out A>): AnswersRender<in A> {
         return renderKits.asSequence()
             .filter { entry -> entry.answerClass == answerClass }
-            .map { entry -> entry.renderKit.answersRender as AnswersRender<in A> }
+            .map { entry -> entry.renderKit.answersRender }
+            .filterIsInstance<AnswersRender<in A>>()
             .firstOrNull()
             ?: throw IllegalArgumentException("$answerClass not supported")
+    }
+
+    override fun <R : Test.Result> getResultRender(resultClass: KClass<out R>): ResultRender<in R> {
+        return renderKits.asSequence()
+            .filter { entry -> entry.resultClass == resultClass }
+            .map { entry -> entry.renderKit.resultRender }
+            .filterIsInstance<ResultRender<in R>>()
+            .firstOrNull()
+            ?: throw IllegalArgumentException("$resultClass not supported")
     }
 
     private data class RenderKitEntry<Q : Test.Question, A : Test.Answer, R : Test.Result, T : Test<Q, A, R>>(
